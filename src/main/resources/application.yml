@@ -1,0 +1,43 @@
+spring:
+  application:
+    name: cms
+
+  datasource:
+     driver-class-name: ####################
+     url: ###############################
+     username: ###############
+     password: ##############
+
+  jpa:
+    properties:
+      hibernate:
+        validator:
+        format_sql: true
+    hibernate:
+      ddl-auto: update
+
+  jackson:
+    default-property-inclusion: non_null
+
+logging:
+  level:
+    root: INFO
+    org.hibernate.SQL: DEBUG
+    org.hibernate.type.descriptor.sql.BasicBinder: TRACE
+
+server:
+  port: 8080
+#  servlet:
+#    session:
+#      timeout: 2m
+
+springdoc:
+  packages-to-scan: com.cms.contorller
+  paths-to-match: /api/**
+  swagger-ui:
+    path: /swagger-ui.html
+    operations-sorter: method
+    tags-sorter: alpha
+
+
+
